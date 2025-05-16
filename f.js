@@ -55,10 +55,9 @@ function ejecutarIP(){
     const n = cantidad;
     let tam = new Array(n);
     for(let i = 1; i <= n; ++i){
-        tam[i - 1] = document.getElementById(`campo${i}`).value;
+        tam[i - 1] = parseInt(document.getElementById(`campo${i}`).value);
     }
-    tam.sort();
-    tam.reverse();
+    tam.sort((a, b) => b - a);
 
     let pInicial = document.getElementById("bits").value;
 
