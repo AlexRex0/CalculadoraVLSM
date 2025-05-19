@@ -9,8 +9,8 @@ function actualizarCampos(){
     let html = "";
     for (let i = 1; i <= cantidad; i++) {
         html += `
-        <label for="campo${i}">Subred ${i}:</label>
-        <input type="text" name="campo${i}" id="campo${i}" required><br>
+        <label for="campo${i}" class="form-label">Subred ${i}:</label>
+        <input type="text" class= "form-control w-50"name="campo${i}" id="campo${i}" required><br>
         `;
     }
     container.innerHTML = html;
@@ -64,20 +64,22 @@ function ejecutarIP(){
     /// inicializamos la tabla
     const container = document.getElementById("tablaDeSubredes");
     let html = `
-    <div class="table-responsive mt-4">
-        <table class="table table-striped table-bordered table-hover align-middle">
-        <thead class="table-dark">
-            <tr>
-            <th scope="col">Subred</th>
-            <th scope="col">Número de Hosts</th>
-            <th scope="col">IP de subred</th>
-            <th scope="col">Máscara</th>
-            <th scope="col">Primer Host</th>
-            <th scope="col">Último Host</th>
-            <th scope="col">Broadcast</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div id="tablaDeSubredes" class="mt-5">
+        <h2 class="mb-3" style="color: #6f42c1;">Resultados de Subredes</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped align-middle text-center borde-morado">
+                <thead class="table-success">
+                    <tr>
+                        <th>Subred</th>
+                        <th>Hosts</th>
+                        <th>Dirección</th>
+                        <th>Máscara</th>
+                        <th>Primer Host</th>
+                        <th>Último Host</th>
+                        <th>Broadcast</th>
+                    </tr>
+                </thead>
+                <tbody>
     `;
 
     ///
@@ -116,6 +118,12 @@ function ejecutarIP(){
         
     }
     /// asignamos la tabla de subredes
+    html += `
+                </tbody>
+            </table>
+        </div>
+    </div>
+    `;
     container.innerHTML = html;
     ///
 }

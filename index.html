@@ -9,35 +9,86 @@
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
     rel="stylesheet"
     >
+    <style>
+        body {
+            background-color: #f3e8ff;
+        }
+
+        h1 {
+            color: #6b21a8
+        }
+
+        .form-label {
+            color: #4c1d95;
+        }
+
+        .btn-primary {
+            background-color: #22c55e;
+            border-color: #22c55e;
+        }
+
+        .btn-primary:hover {
+            background-color: #16a34a;
+            border-color: #16a34a;
+        }
+
+        .bg-white {
+            background-color: #ffffff !important;
+        }
+
+        .form-control:focus {
+            border-color: #a855f7;
+            box-shadow: 0 0 0 0.25rem rgba(168, 85, 247, 0.25);
+        }
+        .text-lg {
+            font-size: 1.3rem;
+            font-style: italic;  
+        }
+        .borde-morado {
+            border: 1.5px solid rgba(111, 66, 193, 0.5);
+            border-radius: 6px;
+        }
+    </style>
 </head>
 <body class="bg-light">
-
 <div class="container py-5">
     <h1 class="mb-4">Calculadora de Subredes</h1>
 
-    <form id="formSubredes" class="row g-3 bg-white p-4 rounded shadow-sm">
-    <div class="col-md-4">
-        <label for="ip" class="form-label">Dirección IP</label>
+    <form id="formSubredes" class="bg-white p-4 rounded shadow-sm">
+    <div class="row g-3">
+        <div class="col-md-4">
+        <label for="ip" class="form-label text-lg">Dirección IP</label>
         <input type="text" class="form-control" id="ip" required>
+        </div>
+
+        <div class="col-md-4">
+        <label for="bits" class="form-label text-lg">Bits de Prefijo</label>
+        <input type="number" class="form-control" id="bits" required>
+        </div>
+
+        <div class="col-md-4">
+        <label for="noSubredes" class="form-label text-lg">Número de Subredes</label>
+        <input type="number" class="form-control" id="noSubredes" required>
+        </div>
     </div>
 
-    <div class="col-md-4">
-        <label for="bits" class="form-label">Bits de Prefijo</label>
-        <input type="number" class="form-control" id="bits" required min="0" max="32" value="24">
+    <!-- Subredes + GIF en una misma fila -->
+    <div class="row mt-4">
+        <div class="col-md-5">
+            <label class="form-label text-lg" style="color: #198754;">Subredes</label>
+            <div id="contenedorCampos" class="row g-2"></div>
+        </div>
+
+        <div class="col-md-7 d-flex justify-content-start mt-3 mt-md-0">
+        <img src="piolin.gif"
+            class="img-fluid rounded shadow-sm"
+            alt="Decoración de red"
+            style="max-width: 450px; filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.5));">
+        </div>
     </div>
 
-    <div class="col-md-4">
-        <label for="noSubredes" class="form-label">Número de Subredes</label>
-        <input type="number" class="form-control" id="noSubredes" required min="1" value="3">
-    </div>
-
-    <div class="col-12">
-        <label class="form-label">Subredes</label>
-        <div id="contenedorCampos" class="row g-2"></div>
-    </div>
-
-    <div class="col-12 text-end">
-        <button type="button" id="boton" class="btn btn-primary">Calcular</button>
+    <div class="col-12 d-flex justify-content-center mt-4">
+        <button type="button" id="boton" class="btn btn-primary btn-lg">Calcular</button>
     </div>
     </form>
 
