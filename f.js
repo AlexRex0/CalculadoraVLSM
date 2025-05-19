@@ -1,3 +1,7 @@
+window.addEventListener('DOMContentLoaded', () => {
+  // tu código que aplica estilos aquí
+
+
 /// CAMPOS DE SUBREDES
 const container = document.getElementById("contenedorCampos");
 cantidad = document.getElementById("noSubredes");
@@ -128,3 +132,4 @@ function ejecutarIP(){
     ///
 }
 
+});
