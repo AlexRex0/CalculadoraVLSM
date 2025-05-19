@@ -66,7 +66,7 @@ function ejecutarIP(){
     const container = document.getElementById("tablaDeSubredes");
     let html = `
     <div id="tablaDeSubredes" class="mt-5">
-        <h2 class="mb-3" style="color: #6f42c1;">Resultados de Subredes</h2>
+        <h2 class="mb-3" style="color: #6f42c1;">Tabla de Subredes</h2>
         <div class="table-responsive">
             <table class="table table-bordered table-striped align-middle text-center borde-morado">
                 <thead class="table-success">
